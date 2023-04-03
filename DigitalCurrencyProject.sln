@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DigitalCurrencyProject", "DigitalCurrencyProject.pyproj", "{3E9F0AB6-BDE3-40E2-B9CD-322512F48235}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E9F0AB6-BDE3-40E2-B9CD-322512F48235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9F0AB6-BDE3-40E2-B9CD-322512F48235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C7A0604-97D1-4D64-9911-606AEBD9E7AB}
+	EndGlobalSection
+EndGlobal
