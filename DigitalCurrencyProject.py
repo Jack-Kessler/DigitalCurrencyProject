@@ -31,6 +31,7 @@ auth = data['access_token']
 
 url = "https://bravenewcoin.p.rapidapi.com/market-cap"
 
+#Code below was provided from RapidAPI
 for currency in creds.crypto_list:
 	querystring = {"assetId":f"{currency}"}
 	headers = {
@@ -39,27 +40,20 @@ for currency in creds.crypto_list:
 	"X-RapidAPI-Host": "bravenewcoin.p.rapidapi.com"
 	}
 	response = requests.request("GET", url, headers=headers, params=querystring)
-	data = json.loads(response.text)
-	print(json.dumps(data, indent=2))
-	print("\n")
-	#NOTE: response.text (or variable "data") is class = dictionary
+	data = json.loads(response.text) 
 
+	for par in data['content']:
+		assetId = (par['assetId'])
+		timeStamp = (par['timestamp'])
+		price = (par['price'])
 
+	#print(type(response.text)) #NOTE: response.text class = str
+	#print(type(data)) # data class = dict
+	#print(type(data['content'])) # data['content'] class = list
 
-
-#print(response.text)
-#print("\n")
-
-
-
-#print(type(data['content'])) 
-#NOTE: data['content'] is of type list.
-
-#for par in data['content']:
-#	print(par['price'])
-
-#Prints out only price
-
-
-
-
+	#print(json.dumps(data, indent=2)) #Prints out all data properties
+	#jVar = json.dumps(data, indent=2)
+	#print(type(jVar)) #jVar class = str
+	#print("\n")
+	#print(jVar)
+	#print("\n")
