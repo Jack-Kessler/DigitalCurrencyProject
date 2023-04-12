@@ -31,23 +31,26 @@ auth = data['access_token']
 
 url = "https://bravenewcoin.p.rapidapi.com/market-cap"
 
-querystring = {"assetId":"f1ff77b6-3ab4-4719-9ded-2fc7e71cff1f"}
-#assetId above is for BTC. Can change later on or add more. Not Sensitive.
-
-headers = {
+for currency in creds.crypto_list:
+	querystring = {"assetId":f"{currency}"}
+	headers = {
 	"Authorization": f"Bearer {auth}",
 	"X-RapidAPI-Key": f"{creds.xrapidAPIkey}",
 	"X-RapidAPI-Host": "bravenewcoin.p.rapidapi.com"
-}
+	}
+	response = requests.request("GET", url, headers=headers, params=querystring)
+	data = json.loads(response.text)
+	print(json.dumps(data, indent=2))
+	print("\n")
+	#NOTE: response.text (or variable "data") is class = dictionary
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+
+
 
 #print(response.text)
 #print("\n")
 
-data = json.loads(response.text)
-print(json.dumps(data, indent=2))
-#NOTE: response.text (or variable "data") is class = dictionary
+
 
 #print(type(data['content'])) 
 #NOTE: data['content'] is of type list.
